@@ -1,5 +1,5 @@
 import React from "react";
-import 'import './AuthInput.css';
+import './AuthInput.css';
 
 export const AuthInput = ({
   type,
