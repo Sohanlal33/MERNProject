@@ -8,8 +8,8 @@ import {
     passwordValidationMessage,
     validateUsername,
 } from "../shared/validators";
-// import { emailValidationMessage } from "../shared/validateEmail";
-// import { passwordValidationMessage } from "../shared/validatePassword";
+import { emailValidationMessage } from "../shared/validateEmail";
+import { passwordValidationMessage } from "../shared/validatePassword";
 
 export const Register = ({ switchAuthHandler }) => {
     const [formState, setFormState] = useState({
@@ -91,7 +91,7 @@ export const Register = ({ switchAuthHandler }) => {
                     label="Username"
                     value={formState.username.value}
                     onChangeHandler={handleInputValueChange}
-                    type="password"
+                    type="text"
                     onBlurHandler={handleInputValidationOnBlur}
                     showErrorMessage={formState.username.showError}
                     validationMessage={usernameValidationMessage}
