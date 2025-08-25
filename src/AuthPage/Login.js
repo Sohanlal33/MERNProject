@@ -80,8 +80,7 @@ export const Login = ({ switchAuthHandler }) => {
                     showErrorMessage={formState.password.showError}
                     validationMessage={passwordValidationMessage}
                 />
-                <button disabled={!formState.password.isValid || !formState.email.isValid}
-                >Log In </button>
+                <button disabled={!formState.password.isValid || !formState.email.isValid}>Log In </button>
             </form>
             <span onClick={switchAuthHandler} className="auth-form-switch-label">
                 Don't have an account ? Sign up
