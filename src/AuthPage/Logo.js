@@ -1,12 +1,9 @@
 import React from 'react'
 import logoPlaceholder from '../resources/images/logoPlaceholder.svg';
 
-export const Logo = ({ text }) => {
-    return (
+export const Logo = ({ text }) => (
         <div className='auth-form-logo-container'>
-            <Logo text={"Log in to clone"} />
-            <img src={logoPlaceholder} alt="" />
+            <img src={logoPlaceholder} alt="Logo" />
             <span>&nbsp;&nbsp; {text} </span>
         </div>
     );
-};
