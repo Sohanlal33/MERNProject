@@ -1,38 +1,28 @@
-import React from 'react'
+import React from "react";
+import "./AuthInput.css";
 
 export const AuthInput = ({
-    field,
-    label,
-    value,
-    onChangeHandler,
-    type,
-    showErrorMessage,
-    validationMessage,
-    onBlurHandler,
-
+  type,
+  placeholder,
+  value,
+  onChange,
+  onBlur,
+  showErrorMessage,
+  validationMessage,
 }) => {
-    const handleValueChange = (e) => {
-        onChangeHandler(e.target.value, field);
-    };
-
-    const handleInputBlur = (e) => {
-        onBlurHandler(e.target.value, field);
-    };
-
-    return (
-        <>
-            <div className='auth-form-label'>
-                <span>{label}</span>
-            </div>
-            <input
-                type={type}
-                value={value}
-                onChange={handleValueChange}
-                onBlur={handleInputBlur}
-            />
-            <span className="auth-form-validation-message">
-                {showErrorMessage && validationMessage}
-            </span>
-        </>
-    );
+  return (
+    <div className="auth-input-container">
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        className={`auth-input ${showErrorMessage ? "input-error" : ""}`}
+      />
+      {showErrorMessage && (
+        <p className="error-message">{validationMessage}</p>
+      )}
+    </div>
+  );
 };
