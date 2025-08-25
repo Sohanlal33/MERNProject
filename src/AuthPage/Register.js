@@ -57,8 +57,8 @@ export const Register = ({ switchAuthHandler }) => {
             case 'username':
                 isValid = validateUsername(value)
                 break;
-            case 'username':
-                isValid = validatePasswordConf(formstate.password.value, value);
+            case 'password':
+                isValid = validatePasswordConfig(formstate.password.value, value);
                 break;
             default:
                 break;
@@ -93,7 +93,7 @@ export const Register = ({ switchAuthHandler }) => {
                     onChangeHandler={handleInputValueChange}
                     type="password"
                     onBlurHandler={handleInputValidationOnBlur}
-                    showErrorMessage={formState.password.showError}
+                    showErrorMessage={formState.username.showError}
                     validationMessage={usernameValidationMessage}
 
                 />
@@ -106,20 +106,20 @@ export const Register = ({ switchAuthHandler }) => {
                     showErrorMessage={formState.password.showError}
                     validationMessage={passwordValidationMessage}
                 />
-                < AuthInput field="passwordConf"
+                < AuthInput field="passwordConfig"
                     label="Password confirmation"
                     value={formState.passwordConf.value}
                     onChangeHandler={handleInputValueChange}
                     type="password"
                     onBlurHandler={handleInputValidationOnBlur}
-                    showErrorMessage={formState.password.showError}
+                    showErrorMessage={formState.passwordConfig.showError}
                     validationMessage={passwordConfValidationMessage}
                 />
                 <button disabled={!formState.password.isValid ||
                     !formState.email.isValid ||
                     !formState.username.isValid ||
-                    !formState.password.value !== formState.passwordConf.value}
-                >Log In </button>
+                    !formState.password.isValid ||
+                    !formState.password.value !== formState.passwordConfig.value}> Register </button>
             </form>
             <span onClick={switchAuthHandler} className="auth-form-switch-label">
                 Already have an account ? Sign in
